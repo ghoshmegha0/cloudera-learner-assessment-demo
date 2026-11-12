@@ -1,0 +1,809 @@
+{
+  "source": "Existing team worksheet (Q01-Q11), Sanket GenAI skill (S08), plus new proposed role-specific questions informed by Cloudera Education learning-path topics.",
+  "questionBankStatus": "Existing team questions retained; all newly added questions are drafts requiring Sanket/Maria/SME content validation before customer release.",
+  "assessmentVersion": "poc-v1.6-expanded-draft",
+  "defaultTrack": "Data Engineer",
+  "tracks": {
+    "Data Engineer": {
+      "label": "Data Engineering",
+      "questionIds": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "DE01",
+        "DE02",
+        "DE03",
+        "DE04",
+        "DE05"
+      ],
+      "description": "CDP, NiFi, Kafka, Iceberg, Spark, Airflow, data quality, performance, and incremental pipelines"
+    },
+    "Data Ops": {
+      "label": "Data Operations",
+      "questionIds": [
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q05",
+        "OP01",
+        "OP02",
+        "OP03",
+        "OP04"
+      ],
+      "description": "CDP, NiFi operations, Kafka operations, streaming reliability, schemas, and incident response"
+    },
+    "Data Analyst": {
+      "label": "Data Analytics",
+      "questionIds": [
+        "Q01",
+        "Q06",
+        "AN01",
+        "AN02",
+        "AN03",
+        "AN04",
+        "AN05",
+        "AN06"
+      ],
+      "description": "CDP, SQL, Impala/Hive, data modeling, visualization, query tuning, and data quality"
+    },
+    "ML Engineer": {
+      "label": "Machine Learning",
+      "questionIds": [
+        "Q01",
+        "Q07",
+        "S08",
+        "ML01",
+        "ML02",
+        "ML03",
+        "ML04",
+        "ML05",
+        "ML06"
+      ],
+      "description": "CDP, ML fundamentals, Cloudera AI, MLOps, deployment, RAG, and GenAI"
+    },
+    "App Developer": {
+      "label": "Application Development",
+      "questionIds": [
+        "Q01",
+        "Q08",
+        "AD01",
+        "AD02",
+        "AD03",
+        "AD04",
+        "AD05",
+        "AD06"
+      ],
+      "description": "CDP, HBase, NoSQL APIs, application security, event-driven integration, and deployment"
+    },
+    "Administrator": {
+      "label": "Administration",
+      "questionIds": [
+        "Q01",
+        "Q09",
+        "SYS01",
+        "SYS02",
+        "SYS03",
+        "SYS04",
+        "SYS05",
+        "SYS06"
+      ],
+      "description": "CDP, Cloudera Manager, authentication, capacity, recovery, and incident operations"
+    },
+    "Architect": {
+      "label": "Architecture",
+      "questionIds": [
+        "Q01",
+        "Q10",
+        "AR01",
+        "AR02",
+        "AR03",
+        "AR04",
+        "AR05",
+        "AR06"
+      ],
+      "description": "CDP, hybrid and multicloud architecture, lakehouse, security, resilience, and edge-to-AI"
+    },
+    "Data Governance": {
+      "label": "Data Governance",
+      "questionIds": [
+        "Q01",
+        "Q11",
+        "GOV01",
+        "GOV02",
+        "GOV03",
+        "GOV04",
+        "GOV05",
+        "GOV06"
+      ],
+      "description": "CDP, catalog, Ranger policies, lineage, classification, audits, and stewardship"
+    }
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "topic": "CDP Architecture & Platform Basics",
+      "question": "How familiar are you with Cloudera Data Platform (CDP) fundamentals & concepts?",
+      "levels": {
+        "0": "I have little or no knowledge of CDP.",
+        "1": "I understand the basic purpose and terminology of CDP.",
+        "2": "I have working knowledge of CDP components and can perform common tasks.",
+        "3": "I have deep practical and architectural expertise in CDP and can handle complex production environments."
+      },
+      "origin": "Cloudera shared 5-tab worksheet QUESTIONS"
+    },
+    {
+      "id": "Q02",
+      "topic": "Data Ingestion & Apache NiFi",
+      "question": "What is your proficiency with Apache NiFi and Cloudera Data Flow (CDF)?",
+      "levels": {
+        "0": "I have little or no knowledge of Apache NiFi or CDF.",
+        "1": "I understand the basic concepts and terminology of NiFi/CDF and simple data flows.",
+        "2": "I can create, configure, and manage common NiFi/CDF data flows independently.",
+        "3": "I can design, troubleshoot, secure, optimize, and manage complex production NiFi/CDF environments."
+      },
+      "origin": "Cloudera shared 5-tab worksheet QUESTIONS"
+    },
+    {
+      "id": "Q03",
+      "topic": "Real-Time Streaming & Apache Kafka",
+      "question": "What is your level of experience with Apache Kafka?",
+      "levels": {
+        "0": "I have little or no knowledge of Apache Kafka.",
+        "1": "I understand the basic Kafka concepts such as topics, producers, consumers, and partitions.",
+        "2": "I can create, configure, and manage common Kafka workloads and troubleshoot basic issues.",
+        "3": "I can design, administer, troubleshoot, secure, scale, and optimize complex production Kafka environments."
+      },
+      "origin": "Cloudera shared 5-tab worksheet QUESTIONS"
+    },
+    {
+      "id": "Q04",
+      "topic": "Apache Iceberg & Open Table Formats",
+      "question": "How comfortable are you building or querying modern Open Data Lakehouses with Apache Iceberg?",
+      "levels": {
+        "0": "I have little or no knowledge of Apache Iceberg or modern data lakehouses.",
+        "1": "I understand the basic concepts of Iceberg tables and lakehouse architecture.",
+        "2": "I can create, query, and manage Iceberg tables and understand common lakehouse operations.",
+        "3": "I can design, optimize, troubleshoot, and manage production-grade Iceberg-based open data lakehouses."
+      },
+      "origin": "Cloudera shared 5-tab worksheet QUESTIONS"
+    },
+    {
+      "id": "Q05",
+      "topic": "Data Engineering & Pipeline Development",
+      "question": "How experienced are you in preparing data, authoring pipelines, and running ETL in CDP?",
+      "levels": {
+        "0": "I have little or no experience preparing data or running ETL pipelines in CDP.",
+        "1": "I understand basic data preparation and ETL concepts and have limited hands-on experience with CDP tools.",
+        "2": "I can independently build, run, monitor, and troubleshoot common ETL/data pipelines in CDP.",
+        "3": "I can design, optimize, troubleshoot, and manage complex production-grade ETL pipelines across CDP."
+      },
+      "origin": "Cloudera shared 5-tab worksheet QUESTIONS"
+    },
+    {
+      "id": "Q06",
+      "topic": "SQL Analytics & Data Warehousing",
+      "question": "How experienced are you in querying large-scale datasets and utilizing cloud data warehouses?",
+      "levels": {
+        "0": "I have little or no experience querying large datasets or using cloud data warehouses.",
+        "1": "I understand basic SQL and data warehouse concepts and can perform simple queries.",
+        "2": "I can independently query large datasets, write complex SQL, and work with cloud data warehouses.",
+        "3": "I can design, optimize, troubleshoot, and manage complex analytical workloads on large-scale cloud data warehouses."
+      },
+      "origin": "Cloudera shared 5-tab worksheet QUESTIONS"
+    },
+    {
+      "id": "Q07",
+      "topic": "Machine Learning Workflows & CML",
+      "question": "What is your experience level in deploying, managing, and scaling machine learning models in cloud environments?",
+      "levels": {
+        "0": "I have little or no experience deploying or managing ML models in cloud environments.",
+        "1": "I understand basic ML deployment concepts and have limited hands-on experience.",
+        "2": "I can deploy, manage, monitor, and troubleshoot ML models in cloud environments.",
+        "3": "I can architect, deploy, scale, optimize, secure, and manage production-grade ML model-serving environments."
+      },
+      "origin": "Cloudera shared 5-tab worksheet QUESTIONS"
+    },
+    {
+      "id": "Q08",
+      "topic": "Enterprise Applications & HBase",
+      "question": "How comfortable are you building enterprise applications that interface with modern big data architectures and NoSQL stores?",
+      "levels": {
+        "0": "I have little or no experience integrating applications with big data or NoSQL systems.",
+        "1": "I understand basic big data and NoSQL concepts and have limited hands-on experience.",
+        "2": "I can build applications that integrate with big data platforms and NoSQL stores and troubleshoot common issues.",
+        "3": "I can architect, build, optimize, and troubleshoot enterprise applications integrated with large-scale big data and NoSQL environments."
+      },
+      "origin": "Cloudera shared 5-tab worksheet QUESTIONS"
+    },
+    {
+      "id": "Q09",
+      "topic": "Administration, Monitoring & Security",
+      "question": "What is your level of experience in managing, monitoring, and securing Cloudera environments?",
+      "levels": {
+        "0": "I have little or no experience managing, monitoring, or securing Cloudera environments.",
+        "1": "I understand the basic concepts of Cloudera administration, monitoring, and security.",
+        "2": "I can independently manage, monitor, troubleshoot, and perform common security tasks in Cloudera environments.",
+        "3": "I can administer, secure, monitor, troubleshoot, optimize, and architect complex production Cloudera environments."
+      },
+      "origin": "Cloudera shared 5-tab worksheet QUESTIONS"
+    },
+    {
+      "id": "Q10",
+      "topic": "Modern Data Architecture & Edge-to-AI Design",
+      "question": "How experienced are you in designing end-to-end multi-cloud and hybrid data architectures?",
+      "levels": {
+        "0": "I have little or no experience designing cloud, hybrid, or multi-cloud data architectures.",
+        "1": "I understand the basic concepts and components of hybrid and multi-cloud data architectures.",
+        "2": "I can design and implement common hybrid and multi-cloud data solutions and understand key architectural considerations.",
+        "3": "I can architect and lead complex end-to-end enterprise multi-cloud and hybrid data environments, including security, governance, scalability, HA, DR, and cost optimization."
+      },
+      "origin": "Cloudera shared 5-tab worksheet QUESTIONS"
+    },
+    {
+      "id": "Q11",
+      "topic": "Data Governance, Lineage & Catalog",
+      "question": "What is your proficiency in enforcing data policies, auditing, and maintaining data lineage in CDP?",
+      "levels": {
+        "0": "I have little or no experience with data policies, auditing, or data lineage in CDP.",
+        "1": "I understand the basic concepts of CDP data governance, access policies, auditing, and lineage.",
+        "2": "I can configure and manage common CDP governance policies, auditing, and lineage using tools such as Ranger and Atlas.",
+        "3": "I can design, implement, troubleshoot, and manage enterprise-grade CDP governance, auditing, security policies, and data lineage."
+      },
+      "origin": "Cloudera shared 5-tab worksheet QUESTIONS"
+    },
+    {
+      "id": "S08",
+      "topic": "Generative & Agentic AI",
+      "question": "How experienced are you in building GenAI applications (LLMs, RAG, fine-tuning) and agentic AI workflows?",
+      "levels": {
+        "0": "No hands-on experience",
+        "1": "Understand concepts, limited hands-on",
+        "2": "Comfortable with day-to-day tasks",
+        "3": "Can design, optimize and troubleshoot independently"
+      },
+      "origin": "Sanket Slack 12-skill list; domain-level question, needs curriculum review"
+    },
+    {
+      "id": "DE01",
+      "topic": "Apache Spark & PySpark",
+      "question": "How comfortable are you developing batch transformations with Apache Spark or PySpark?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand Spark DataFrames, transformations, and jobs but have limited hands-on experience.",
+        "2": "I can build and debug batch transformations using Spark DataFrames.",
+        "3": "I can optimize Spark jobs for data volume, execution cost, and production reliability."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "DE02",
+      "topic": "Workflow Orchestration & Apache Airflow",
+      "question": "How experienced are you orchestrating and scheduling data pipelines with Apache Airflow or Cloudera Data Engineering?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand DAGs, schedules, and task dependencies but have limited hands-on experience.",
+        "2": "I can create, schedule, and monitor DAG-based pipelines.",
+        "3": "I can design dependency-aware pipelines with retries, observability, and recovery procedures."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "DE03",
+      "topic": "Data Quality & Validation",
+      "question": "How do you assess your ability to implement data quality checks within pipelines?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand completeness, validity, and duplicate checks but have limited hands-on experience.",
+        "2": "I can add validation rules and handle rejected records in routine pipelines.",
+        "3": "I can design automated quality controls with thresholds, alerting, and lineage-aware remediation."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "DE04",
+      "topic": "Pipeline Performance & Optimization",
+      "question": "How proficient are you in improving the reliability and performance of large data pipelines?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand partitioning, performance metrics, and job failures but have limited hands-on experience.",
+        "2": "I can identify bottlenecks and tune common pipeline configurations.",
+        "3": "I can diagnose complex bottlenecks and optimize distributed processing and resource usage."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "DE05",
+      "topic": "Incremental Processing & Change Data Capture",
+      "question": "What is your experience handling incremental updates and change data capture (CDC) in data pipelines?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand incremental loads, upserts, and CDC concepts but have limited hands-on experience.",
+        "2": "I can implement incremental ingestion and reliable upserts for changing datasets.",
+        "3": "I can design fault-tolerant CDC pipelines with schema evolution and replay strategies."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "OP01",
+      "topic": "NiFi Flow Monitoring & Recovery",
+      "question": "How comfortable are you monitoring and recovering Apache NiFi data flows?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand queues, back pressure, and processor status but have limited hands-on experience.",
+        "2": "I can monitor flow health and resolve common processor or queue issues.",
+        "3": "I can investigate recurring failures and tune high-throughput flows with safe recovery procedures."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "OP02",
+      "topic": "Kafka Operations & Consumer Lag",
+      "question": "What is your experience monitoring Kafka broker health, throughput, and consumer lag?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand brokers, replication, and consumer groups but have limited hands-on experience.",
+        "2": "I can interpret operational metrics and troubleshoot routine lag or replication issues.",
+        "3": "I can diagnose cluster-level incidents and plan capacity, failover, and performance tuning."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "OP03",
+      "topic": "Schema & Event Compatibility",
+      "question": "How proficient are you at handling message schemas and compatibility in streaming pipelines?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand event schemas and compatibility basics but have limited hands-on experience.",
+        "2": "I can work with schema changes while avoiding common consumer breakages.",
+        "3": "I can design and govern schema evolution across multiple producers and consumers."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "OP04",
+      "topic": "Streaming Reliability & Incident Response",
+      "question": "How experienced are you resolving disruptions in real-time ingestion and event processing?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand retries, dead-letter handling, and delivery guarantees but have limited hands-on experience.",
+        "2": "I can use alerts and runbooks to recover common streaming failures.",
+        "3": "I can design observability and incident response for resilient, high-volume streaming services."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "AN01",
+      "topic": "SQL Joins, Windows & Aggregations",
+      "question": "How confidently can you write SQL for complex analytical questions?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand joins, grouping, and SQL window functions but have limited hands-on experience.",
+        "2": "I can write and validate multi-table analytical queries with window functions.",
+        "3": "I can optimize complex SQL logic and review query accuracy across large datasets."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "AN02",
+      "topic": "Apache Impala & Hive Queries",
+      "question": "What is your hands-on experience querying data with Apache Impala, Hive, or Cloudera Data Warehouse?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand Impala, Hive, and warehouse query concepts but have limited hands-on experience.",
+        "2": "I can query warehouse datasets and troubleshoot common SQL execution issues.",
+        "3": "I can analyze query plans and improve performance on large warehouse workloads."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "AN03",
+      "topic": "Data Modeling for Analytics",
+      "question": "How skilled are you at structuring data for reporting and business analysis?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand fact tables, dimensions, and analytical datasets but have limited hands-on experience.",
+        "2": "I can create reusable reporting models with clear measures and dimensions.",
+        "3": "I can design scalable analytical models that address granularity, history, and performance."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "AN04",
+      "topic": "Cloudera Data Visualization & Dashboards",
+      "question": "How comfortable are you creating interactive dashboards and visual reports?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand dashboard metrics, charts, and filters but have limited hands-on experience.",
+        "2": "I can build and publish dashboards with meaningful filters and validated measures.",
+        "3": "I can design governed, reusable analytical reporting with performance and usability considerations."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "AN05",
+      "topic": "Query Performance & Cost Awareness",
+      "question": "How experienced are you diagnosing slow analytics queries and inefficient data scans?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand partitions, query plans, and data layout but have limited hands-on experience.",
+        "2": "I can identify common inefficient scans and improve queries or filters.",
+        "3": "I can systematically optimize query execution and data access for large workloads."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "AN06",
+      "topic": "Analytical Data Quality & Access",
+      "question": "How proficient are you in verifying data correctness and respecting data access controls?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand data reconciliation and governed access concepts but have limited hands-on experience.",
+        "2": "I can validate reports against source data and use authorized datasets appropriately.",
+        "3": "I can establish reproducible analytics checks and collaborate on governance and audit requirements."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "ML01",
+      "topic": "Data Preparation & Feature Engineering",
+      "question": "How comfortable are you preparing datasets and engineering features for machine learning?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand train/test splits, leakage, and feature transformations but have limited hands-on experience.",
+        "2": "I can prepare reproducible training data and build feature pipelines.",
+        "3": "I can design feature workflows with leakage controls, validation, and production reuse."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "ML02",
+      "topic": "Model Training & Evaluation",
+      "question": "How proficient are you in training and evaluating machine learning models?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand evaluation metrics, baselines, and validation sets but have limited hands-on experience.",
+        "2": "I can train models and select appropriate evaluation metrics and validation methods.",
+        "3": "I can design robust experiments, detect bias or drift, and improve model generalization."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "ML03",
+      "topic": "Cloudera AI Workbenches & Projects",
+      "question": "What is your experience developing ML workflows in Cloudera AI (formerly CML)?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand projects, sessions, and ML workbench concepts but have limited hands-on experience.",
+        "2": "I can run experiments and manage reproducible ML project environments.",
+        "3": "I can standardize collaborative workflows and troubleshoot complex project environments."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "ML04",
+      "topic": "Model Deployment & Inference",
+      "question": "How experienced are you serving models through APIs or other inference endpoints?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand model packaging and inference endpoints but have limited hands-on experience.",
+        "2": "I can deploy and test a model inference endpoint with basic monitoring.",
+        "3": "I can design and operate secure, scalable inference with rollout and rollback processes."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "ML05",
+      "topic": "MLOps & Experiment Tracking",
+      "question": "How comfortable are you applying MLOps practices to manage the model lifecycle?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand experiment tracking, model versions, and CI/CD concepts but have limited hands-on experience.",
+        "2": "I can track runs and model versions and automate repeatable deployment steps.",
+        "3": "I can design end-to-end MLOps pipelines with approvals, testing, monitoring, and rollback."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "ML06",
+      "topic": "RAG Evaluation & AI Guardrails",
+      "question": "How experienced are you validating retrieval-augmented generation applications and their outputs?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand embeddings, retrieval, grounding, and prompt evaluation but have limited hands-on experience.",
+        "2": "I can build and evaluate a simple RAG workflow and measure answer quality.",
+        "3": "I can design production RAG evaluation, safety controls, and monitoring for changing data."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "AD01",
+      "topic": "HBase Data Modeling & Row Keys",
+      "question": "How comfortable are you designing data access patterns and row keys for Apache HBase?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand HBase tables, row keys, and column families but have limited hands-on experience.",
+        "2": "I can model tables and choose row keys for expected access patterns.",
+        "3": "I can design schemas to handle hot spots, scale, and complex query workloads."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "AD02",
+      "topic": "NoSQL Read/Write APIs",
+      "question": "How experienced are you integrating applications with NoSQL databases and data APIs?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand basic CRUD operations and NoSQL client concepts but have limited hands-on experience.",
+        "2": "I can implement and troubleshoot application read/write operations.",
+        "3": "I can design reliable APIs and data access layers with performance and failure handling."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "AD03",
+      "topic": "Application Authentication & Authorization",
+      "question": "How proficient are you at securing application access to Cloudera-managed data?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand identity, authentication, and least-privilege concepts but have limited hands-on experience.",
+        "2": "I can use supported authentication and access controls in application integrations.",
+        "3": "I can design secure end-to-end access with credential rotation and auditability."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "AD04",
+      "topic": "Event-Driven Application Development",
+      "question": "How comfortable are you building applications that consume or publish Kafka events?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand event-driven design and producer/consumer concepts but have limited hands-on experience.",
+        "2": "I can develop an application using Kafka messages with basic error handling.",
+        "3": "I can design resilient event-driven applications with retries, ordering, and replay awareness."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "AD05",
+      "topic": "Application Performance & Reliability",
+      "question": "How experienced are you monitoring and troubleshooting data-intensive application behavior?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand application logs, latency, and basic monitoring but have limited hands-on experience.",
+        "2": "I can investigate slow data calls and implement common resilience measures.",
+        "3": "I can design observability and performance tuning for production-scale data applications."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "AD06",
+      "topic": "Integration Testing & Deployment",
+      "question": "How proficient are you testing and deploying applications connected to big-data services?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand integration tests, environments, and deployment pipelines but have limited hands-on experience.",
+        "2": "I can create integration tests and deploy applications to a managed environment.",
+        "3": "I can automate releases with realistic test data, rollback, and dependency checks."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "SYS01",
+      "topic": "Cloudera Manager & Service Health",
+      "question": "How confident are you monitoring and managing cluster services using Cloudera Manager?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand hosts, services, metrics, and alerts but have limited hands-on experience.",
+        "2": "I can check service health and perform common administrative operations.",
+        "3": "I can troubleshoot complex service incidents using metrics, logs, and configuration history."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "SYS02",
+      "topic": "Cluster Installation & Configuration",
+      "question": "What is your experience provisioning or configuring Cloudera environments?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand clusters, service roles, and configuration basics but have limited hands-on experience.",
+        "2": "I can configure services and validate routine cluster changes.",
+        "3": "I can plan and execute complex deployments or upgrades with compatibility and rollback checks."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "SYS03",
+      "topic": "Identity, Kerberos & Access Controls",
+      "question": "How skilled are you in managing authentication and authorization for Cloudera environments?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand Kerberos, identity integration, and role-based access but have limited hands-on experience.",
+        "2": "I can manage routine authentication and access-policy tasks.",
+        "3": "I can diagnose cross-service identity issues and implement least-privilege security controls."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "SYS04",
+      "topic": "Capacity Planning & Resource Management",
+      "question": "How experienced are you planning capacity and tuning resource allocation?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand CPU, memory, storage, and utilization metrics but have limited hands-on experience.",
+        "2": "I can interpret utilization and adjust common service resource settings.",
+        "3": "I can forecast demand and optimize capacity and workload isolation under production constraints."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "SYS05",
+      "topic": "Backup, Recovery & High Availability",
+      "question": "How comfortable are you planning high availability and recovery for data platform services?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand replication, backups, and recovery objectives but have limited hands-on experience.",
+        "2": "I can carry out documented backup or restore procedures and validate recovery readiness.",
+        "3": "I can design and test resilient HA/DR strategies with recovery objectives and failure scenarios."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "SYS06",
+      "topic": "Logging, Alerts & Incident Triage",
+      "question": "How proficient are you investigating incidents using system logs and operational monitoring?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand log types, alert thresholds, and incident severity but have limited hands-on experience.",
+        "2": "I can correlate alerts and logs to resolve common service issues.",
+        "3": "I can lead structured root-cause investigations and create preventive operational controls."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "AR01",
+      "topic": "Workload & Service Selection",
+      "question": "How experienced are you selecting platform services for batch, streaming, analytics, and AI use cases?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand common workload patterns and Cloudera services but have limited hands-on experience.",
+        "2": "I can choose suitable services and explain basic technology trade-offs.",
+        "3": "I can evaluate architecture options across latency, scaling, data access, and operational constraints."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "AR02",
+      "topic": "Hybrid & Multicloud Integration",
+      "question": "How comfortable are you designing data flows across on-premises and cloud environments?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand hybrid connectivity and data placement concepts but have limited hands-on experience.",
+        "2": "I can design a workable hybrid data flow with clear service boundaries.",
+        "3": "I can lead hybrid or multicloud designs addressing networking, identity, portability, and failure modes."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "AR03",
+      "topic": "Lakehouse Architecture & Open Formats",
+      "question": "What is your proficiency designing lakehouse solutions with open table formats such as Iceberg?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand lakehouse layers and open table formats but have limited hands-on experience.",
+        "2": "I can design an Iceberg-based architecture for common analytical use cases.",
+        "3": "I can evaluate storage layout, concurrency, governance, and lifecycle trade-offs at enterprise scale."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "AR04",
+      "topic": "Security & Governance by Design",
+      "question": "How experienced are you integrating security and governance into data platform architectures?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand data access policies, audit needs, and trust boundaries but have limited hands-on experience.",
+        "2": "I can include access controls and lineage requirements in an architecture design.",
+        "3": "I can design cross-service governance with security reviews, auditability, and risk management."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "AR05",
+      "topic": "Availability, Disaster Recovery & Cost",
+      "question": "How proficient are you planning resilience and cost efficiency in enterprise data solutions?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand availability targets, disaster recovery, and total cost basics but have limited hands-on experience.",
+        "2": "I can document common resilience and cost considerations in a design.",
+        "3": "I can balance performance, recovery objectives, operating cost, and security in architecture trade-offs."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "AR06",
+      "topic": "Edge-to-AI End-to-End Architecture",
+      "question": "How comfortable are you designing a complete architecture from ingestion to analytics or AI?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand ingestion, storage, analytics, and ML integration patterns but have limited hands-on experience.",
+        "2": "I can draw a coherent end-to-end design with key service interactions.",
+        "3": "I can architect scalable edge-to-AI solutions and justify trade-offs across services and teams."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "GOV01",
+      "topic": "Data Catalog & Asset Discovery",
+      "question": "How experienced are you cataloging and discovering governed datasets?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand catalog metadata, tags, and search concepts but have limited hands-on experience.",
+        "2": "I can locate, classify, and document datasets in a data catalog.",
+        "3": "I can establish metadata standards and scalable catalog stewardship processes."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "GOV02",
+      "topic": "Apache Ranger Access Policies",
+      "question": "What is your proficiency defining and maintaining fine-grained data access policies?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand roles, policies, and Ranger authorization concepts but have limited hands-on experience.",
+        "2": "I can configure and review common Ranger access policies.",
+        "3": "I can design and audit complex fine-grained policies across services and user groups."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "GOV03",
+      "topic": "Lineage & Impact Analysis",
+      "question": "How comfortable are you tracing data lineage and understanding downstream impact?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand source-to-target lineage and dependencies but have limited hands-on experience.",
+        "2": "I can inspect lineage to identify where data comes from and what depends on it.",
+        "3": "I can establish lineage coverage and perform impact analysis across complex pipelines."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "GOV04",
+      "topic": "Data Classification & Sensitive Data",
+      "question": "How skilled are you handling sensitive data and its classification requirements?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand sensitive-data classifications and masking principles but have limited hands-on experience.",
+        "2": "I can apply appropriate classification and access controls to example datasets.",
+        "3": "I can design governance rules for sensitive data with audits, ownership, and risk assessments."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "GOV05",
+      "topic": "Audit Trails & Compliance Evidence",
+      "question": "How experienced are you reviewing access activity and producing governance audit evidence?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand audit logs, policy changes, and compliance records but have limited hands-on experience.",
+        "2": "I can review access history and gather evidence for common audit questions.",
+        "3": "I can design traceable, repeatable audit processes and investigate policy deviations."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    },
+    {
+      "id": "GOV06",
+      "topic": "Stewardship, Ownership & Data Quality",
+      "question": "How proficient are you defining data ownership, stewardship, and quality responsibilities?",
+      "levels": {
+        "0": "I have not worked with this area yet.",
+        "1": "I understand data owners, stewards, and quality measures but have limited hands-on experience.",
+        "2": "I can document ownership and work with teams to resolve common quality issues.",
+        "3": "I can implement governance operating models with clear accountability and measurable quality controls."
+      },
+      "origin": "Proposed new role-specific assessment question; Education SME review required"
+    }
+  ]
+}
