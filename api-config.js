@@ -6,7 +6,7 @@ window.ASSESSMENT_ENABLE_SUBMISSION = false; // Change to true ONLY after the ba
 
 // Must match PILOT_EXPIRES_AT in Lambda. After this time, UI falls back to preview.
 // Example: "2026-11-14T18:30:00+05:30"; leave empty until configured.
-window.ASSESSMENT_PILOT_EXPIRES_AT = "";
+window.ASSESSMENT_PILOT_EXPIRES_AT = "2026-11-14T20:00:00+05:30";
 
 // Paste ONLY the public Cloudflare SITE key here (never the Secret Key).
 window.ASSESSMENT_TURNSTILE_SITE_KEY = "0x4AAAAAAF_O7Loil9V203xU";
