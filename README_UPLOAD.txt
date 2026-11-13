@@ -1,18 +1,19 @@
-CLOUDERA ASSESSMENT v1.7.1 — SAFE AWS API-CONNECTED PREVIEW
+GITHUB PAGES v1.9 — SAFE DEPLOYMENT
 
-Changes
-* AWS endpoint is configured in api-config.js.
-* Public submission is explicitly DISABLED; all learner details remain local to the browser and the assessment ends as a preview.
-* A "Check AWS connection" button sends ONLY {} to API Gateway. The expected HTTP 503 verifies API and Lambda connectivity while email is disabled.
-* Never change window.ASSESSMENT_ENABLE_SUBMISSION to true on the public website without approved customer data hosting, bot protection with SERVER-SIDE token validation, consent/privacy review, and abuse safeguards.
-* Keep AWS Lambda ENABLE_TEST_EMAIL=false.
+Before uploading:
+1. Extract github_pages_v1_9.zip to a local folder.
+2. Open api-config.js; replace PASTE_PUBLIC_SITE_KEY_HERE with your existing
+   PUBLIC Turnstile Site Key (NEVER the Cloudflare Secret Key).
+3. Keep ASSESSMENT_ENABLE_SUBMISSION=false until the AWS one-email guard is
+   configured and tested. This leaves the site preview-only.
+4. Upload index.html, src.js, styles.css, api-config.js, robots.txt and the
+   data/questions.json file to GitHub, keeping questions.json under data/.
+5. Never upload PILOT_ACCESS_CODE, TURNSTILE_SECRET_KEY, or backend code.
 
-GitHub upload steps
-1. Open github.com/ghoshmegha0/cloudera-learner-assessment-demo
-2. Add file > Upload files. Upload the contents of this folder (index.html, src.js, styles.css, api-config.js, robots.txt, and data/questions.json), not this README and not any Lambda files. Preserve data/questions.json as a nested path.
-3. Commit directly to main. GitHub Pages will publish automatically if configured from main / (root).
-4. Hard-refresh https://ghoshmegha0.github.io/cloudera-learner-assessment-demo/ (Cmd+Shift+R).
-5. On step 1 click "Check AWS connection". It should say "Connected to AWS API Gateway and Lambda. Email sending remains disabled." without transmitting learner details.
-6. Enter fictional data to try the rest of the questionnaire; "Finish preview" will not send anything.
-
-NOT FOR ACTUAL CUSTOMER SUBMISSIONS. This is a personal-account technical proof of concept.
+Only once DynamoDB and IAM and the private 64-char code are configured in
+Lambda, enable ENABLE_TEST_EMAIL=true, and then set the frontend
+ASSESSMENT_ENABLE_SUBMISSION=true for ONE fictional end-to-end test.
+The private code is typed on the review page, never saved to GitHub.
+The backend rejects any learner email not under example.com/example.org/
+example.net, and reserves only ONE send per PILOT_RUN_ID via DynamoDB.
+Disable both submission flags after the test.

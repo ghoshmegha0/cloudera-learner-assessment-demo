@@ -32,11 +32,12 @@ function snapshot(){return [['Full name',state.learner.name],['Email',state.lear
 function showReview(){
  const qs=activeQuestions();
  const text=canSubmit?'Please check your details and answers before submitting.':'Please check your details and answers before finishing the preview.';
- const note=canSubmit?'Your completed assessment will be emailed to Cloudera Education for review. Pilot testing: use fictional learner information only.':'Preview only: no learner details or answers are submitted, emailed, or stored. Please use fictional learner details.';
- const action=canSubmit?'Submit assessment →':'Finish preview →';
+ const note=canSubmit?'Private pilot: one fictional assessment will be emailed only to the fixed test inbox. This is NOT a Cloudera customer submission.':'Preview only: no learner details or answers are submitted, emailed, or stored. Please use fictional learner details.';
+ const action=canSubmit?'Send one private pilot email →':'Finish preview →';
+ const privatePilotUi=canSubmit?`<div class="callout" style="margin-top:16px"><strong>Private pilot email test</strong><p style="margin:8px 0">Fictional data only. Your learner email must use @example.com, @example.net or @example.org. The email is sent to the fixed pilot inbox, not to the learner.</p><label class="field"><span>Temporary private test access code</span><input id="pilotAccessCode" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Enter the one-time private test code" required></label><p class="muted">Never put the code in GitHub or the browser configuration.</p></div>`:'';
  const verifyUi=`<div class="callout" style="margin-top:16px"><strong>Security verification — pilot check</strong><p style="margin:8px 0">Complete the Cloudflare check, then test the verification. This sends only a security token to AWS, not learner details.</p><div id="turnstileMount" style="min-height:55px"></div><button type="button" class="btn" id="checkTurnstile" disabled>Verify Turnstile (no email)</button><div id="turnstileStatus" role="status" aria-live="polite" style="margin-top:9px"></div></div>`;
  el('app').innerHTML=panelHead('STEP 03 / REVIEW','Review your assessment',text)+
- `<div class="review-grid">${snapshot().map(([k,v])=>`<div class="review-item"><span>${escapeHtml(k)}</span><strong>${escapeHtml(v)}</strong></div>`).join('')}</div><h3 class="section-title">Your proficiency responses</h3><div class="answer-list">${qs.map(q=>`<div class="answer-item"><strong>${escapeHtml(q.topic)}</strong><span>Level ${state.answers[q.id]} · ${labels[state.answers[q.id]]}</span></div>`).join('')}</div>${verifyUi}<div class="callout">${escapeHtml(note)}</div><div id="submitError" class="error" style="display:none"></div><div class="button-bar"><button class="btn" id="back">← Edit answers</button><button class="btn btn-primary" id="submit">${action}</button></div>`;
+ `<div class="review-grid">${snapshot().map(([k,v])=>`<div class="review-item"><span>${escapeHtml(k)}</span><strong>${escapeHtml(v)}</strong></div>`).join('')}</div><h3 class="section-title">Your proficiency responses</h3><div class="answer-list">${qs.map(q=>`<div class="answer-item"><strong>${escapeHtml(q.topic)}</strong><span>Level ${state.answers[q.id]} · ${labels[state.answers[q.id]]}</span></div>`).join('')}</div>${verifyUi}${privatePilotUi}<div class="callout">${escapeHtml(note)}</div><div id="submitError" class="error" style="display:none"></div><div class="button-bar"><button class="btn" id="back">← Edit answers</button><button class="btn btn-primary" id="submit">${action}</button></div>`;
  el('back').addEventListener('click',()=>go(2));el('submit').addEventListener('click',sendTestSubmission);
  initTurnstile();
 }
@@ -108,10 +109,12 @@ function getPayload(){return {formVersion:'poc-v1.7-expanded-skills',learningTra
 async function sendTestSubmission(){
  if(!canSubmit){state.delivery={status:'preview',sent:false};state.submitted=true;render();return;}
  if(!verifiedToken){const error=el('submitError');error.textContent='Complete the Cloudflare security check before submitting.';error.style.display='block';return;}
+ const privateCode=String(el('pilotAccessCode')?.value||'').trim();
+ if(!/^[a-f0-9]{64}$/.test(privateCode)){const error=el('submitError');error.textContent='Enter the 64-character private pilot access code.';error.style.display='block';return;}
  const submit=el('submit');submit.disabled=true;submit.textContent='Sending…';
  const error=el('submitError');error.style.display='none';
  try{
-  const res=await fetch(apiUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...getPayload(),turnstileToken:verifiedToken})});
+  const res=await fetch(apiUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...getPayload(),turnstileToken:verifiedToken,pilotAccessCode:privateCode})});
   const data=await res.json().catch(()=>({}));
   if(!res.ok||data.sent!==true)throw new Error(data.message || 'Email service unavailable.');
   state.delivery={status:'sent',sent:true};state.submitted=true;render();
@@ -128,7 +131,7 @@ function restart(){state.submitted=false;state.delivery=null;state.step=1;state.
 function showSubmitted(){
  const sent=state.delivery?.sent===true;
  const title=sent?'Assessment submitted.':'Assessment preview complete.';
- const description=sent?'The email service accepted your assessment for the Cloudera Education pilot. This is not confirmation of inbox delivery.':'This is a visual demonstration only. No responses were sent, emailed, stored, or submitted to Cloudera.';
+ const description=sent?'The email service accepted one fictional assessment for the private pilot test inbox. This is not confirmation of inbox delivery.':'This is a visual demonstration only. No responses were sent, emailed, stored, or submitted to Cloudera.';
  const tag=sent?'SUBMISSION ACCEPTED':'PREVIEW COMPLETED';
  el('app').innerHTML=`<div class="success-box"><div class="success-icon">✓</div><div class="micro">${tag}</div><h2>${title}</h2><p>${description}</p><div class="button-bar"><button class="btn btn-primary" id="restart">Start a new assessment →</button></div></div>`;
  el('restart').addEventListener('click',restart);
