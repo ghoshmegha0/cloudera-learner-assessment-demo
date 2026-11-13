@@ -2,7 +2,7 @@
 // Never paste the private pilot code or Cloudflare SECRET key into this file.
 // Keep submission false until the new Lambda, IAM and cutoff are configured.
 window.ASSESSMENT_API_URL = "https://tb51edsrbj.execute-api.ap-southeast-2.amazonaws.com/assessment";
-window.ASSESSMENT_ENABLE_SUBMISSION = false; // Change to true ONLY after the backend guard is configured and dry-tested.
+window.ASSESSMENT_ENABLE_SUBMISSION = true;// Change to true ONLY after the backend guard is configured and dry-tested.
 
 // Must match PILOT_EXPIRES_AT in Lambda. After this time, UI falls back to preview.
 // Example: "2026-11-14T18:30:00+05:30"; leave empty until configured.
